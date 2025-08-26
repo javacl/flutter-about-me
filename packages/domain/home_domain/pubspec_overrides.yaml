@@ -1,0 +1,10 @@
+# melos_managed_dependency_overrides: coin_data,common,network,database
+dependency_overrides:
+  coin_data:
+    path: ..\\..\\data\\coin_data
+  common:
+    path: ..\\..\\core\\common
+  database:
+    path: ..\\..\\core\\database
+  network:
+    path: ..\\..\\core\\network

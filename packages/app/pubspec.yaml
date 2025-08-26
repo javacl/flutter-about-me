@@ -1,0 +1,38 @@
+name: app
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  core_di:
+    path: ../core/core_di
+  data_di:
+    path: ../data/data_di
+  domain_di:
+    path: ../domain/domain_di
+  design_system:
+    path: ../core/design_system
+  home_screen:
+    path: ../screens/home_screen
+  material_symbols_icons: any
+  get_it: any
+  injectable: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: any
+  melos: any
+  build_runner: any
+  injectable_generator: any
+
+flutter:
+  uses-material-design: true
+  generate: true

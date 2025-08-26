@@ -1,0 +1,28 @@
+name: network
+description: "A new Flutter package project."
+version: 0.0.1
+
+publish_to: 'none'
+
+environment:
+  sdk: ^3.8.0
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  common:
+    path: ../../core/common
+  dio: any
+  json_annotation: any
+  connectivity_plus: any
+  get_it: any
+  injectable: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: any
+  build_runner: any
+  json_serializable: any
+  injectable_generator: any

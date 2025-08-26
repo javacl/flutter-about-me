@@ -1,0 +1,33 @@
+name: flutter_about_me
+
+packages:
+  - packages/**
+
+dependency_overrides:
+  melos: ^6.3.3
+
+  flutter_lints: ^6.0.0
+
+  material_symbols_icons: ^4.2815.1
+
+  dio: ^5.8.0
+  json_annotation: ^4.9.0
+  connectivity_plus: ^6.1.4
+
+  get_it: ^8.0.3
+  injectable: ^2.5.0
+
+  build_runner: ^2.4.15
+  json_serializable: ^6.9.5
+  injectable_generator: ^2.7.0
+
+  drift: ^2.26.1
+  sqlite3_flutter_libs: ^0.5.34
+  path_provider: ^2.1.5
+  path: ^1.9.1
+  drift_dev: ^2.26.1
+
+scripts:
+  build_runner:
+    run: |
+      melos exec --depends-on="build_runner" -- flutter pub run build_runner build --delete-conflicting-outputs
