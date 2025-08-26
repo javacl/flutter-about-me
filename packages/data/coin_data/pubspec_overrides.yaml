@@ -1,8 +1,0 @@
-# melos_managed_dependency_overrides: common,network,database
-dependency_overrides:
-  common:
-    path: ..\\..\\core\\common
-  database:
-    path: ..\\..\\core\\database
-  network:
-    path: ..\\..\\core\\network
