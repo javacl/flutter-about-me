@@ -11,6 +11,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  main_domain:
+    path: ../../domain/main_domain
+  articles_domain:
+    path: ../../domain/articles_domain
+  article_domain:
+    path: ../../domain/article_domain
+  profile_domain:
+    path: ../../domain/profile_domain
 
 dev_dependencies:
   flutter_test:
