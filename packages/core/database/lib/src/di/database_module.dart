@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:database/src/data_source/coin/coin_dao.dart';
+import 'package:database/src/data_source/article/article_dao.dart';
 import 'package:database/src/db/app_database.dart';
 import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
@@ -15,12 +15,14 @@ abstract class DatabaseModule {
     return AppDatabase(
       LazyDatabase(() async {
         final dbFolder = await getApplicationDocumentsDirectory();
-        final file = File(p.join(dbFolder.path, 'bitzy.sqlite'));
+        final file = File(
+          p.join(dbFolder.path, 'flutterAboutMeDatabase.sqlite'),
+        );
         return NativeDatabase(file);
       }),
     );
   }
 
   @lazySingleton
-  CoinDao provideCoinDao(AppDatabase db) => db.coinDao;
+  ArticleDao provideArticleDao(AppDatabase db) => db.articleDao;
 }

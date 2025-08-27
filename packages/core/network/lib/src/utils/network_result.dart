@@ -1,38 +1,39 @@
 import 'dart:async';
 
-import 'package:common/result/bitzy_exception.dart';
-import 'package:common/result/bitzy_result.dart';
+import 'package:common/result/project_exception.dart';
+import 'package:common/result/project_result.dart';
 import 'package:dio/dio.dart';
 import 'package:network/src/model/error/error_response.dart';
 import 'package:network/src/utils/network_connectivity.dart';
 
-Future<BitZyResult<T>> checkNetworkResult<T>({
-  required Future<Response<T>> Function() call,
+Stream<ProjectResult<T>> checkNetworkResult<T>({
+  required Stream<Response<T>> Function() call,
   required NetworkConnectivity networkConnectivity,
   required String errorMessage,
-}) async {
+}) async* {
   final isConnected = await networkConnectivity.isConnected();
 
-  if (isConnected) {
-    try {
-      final response = await call();
+  if (!isConnected) {
+    yield const Error(NetworkConnectionException());
+    return;
+  }
 
+  try {
+    await for (final response in call()) {
       if (response.statusCode == 200) {
-        return Success(response.data as T);
+        yield Success(response.data as T);
       } else {
         final error = _parseError(response.data);
-        return Error(
+        yield Error(
           DataException(
             message: error.message,
             responseCode: response.statusCode ?? 500,
           ),
         );
       }
-    } catch (e) {
-      return Error(IOException(message: errorMessage, cause: e));
     }
-  } else {
-    return const Error(NetworkConnectionException());
+  } catch (e) {
+    yield Error(IOException(message: errorMessage, cause: e));
   }
 }
 

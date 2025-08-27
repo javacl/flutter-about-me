@@ -12,9 +12,9 @@
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
-import '../data_source/coin/coin_dao.dart' as _i974;
-import '../data_source/coin/coin_local_data_source.dart' as _i47;
-import '../data_source/coin/coin_local_data_source_impl.dart' as _i36;
+import '../data_source/article/article_dao.dart' as _i524;
+import '../data_source/article/article_local_data_source.dart' as _i796;
+import '../data_source/article/article_local_data_source_impl.dart' as _i773;
 import '../db/app_database.dart' as _i951;
 import 'database_module.dart' as _i384;
 
@@ -27,11 +27,11 @@ _i174.GetIt $initDatabaseDI(
   final gh = _i526.GetItHelper(getIt, environment, environmentFilter);
   final databaseModule = _$DatabaseModule();
   gh.lazySingleton<_i951.AppDatabase>(() => databaseModule.provideDatabase());
-  gh.lazySingleton<_i974.CoinDao>(
-    () => databaseModule.provideCoinDao(gh<_i951.AppDatabase>()),
+  gh.lazySingleton<_i524.ArticleDao>(
+    () => databaseModule.provideArticleDao(gh<_i951.AppDatabase>()),
   );
-  gh.lazySingleton<_i47.CoinLocalDataSource>(
-    () => _i36.CoinLocalDataSourceImpl(gh<_i974.CoinDao>()),
+  gh.lazySingleton<_i796.ArticleLocalDataSource>(
+    () => _i773.ArticleLocalDataSourceImpl(gh<_i951.AppDatabase>()),
   );
   return getIt;
 }

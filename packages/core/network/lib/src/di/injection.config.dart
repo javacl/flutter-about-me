@@ -13,10 +13,10 @@ import 'package:dio/dio.dart' as _i361;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
-import '../data_source/coin/coin_api_service.dart' as _i733;
-import '../data_source/coin/coin_api_service_impl.dart' as _i1035;
-import '../data_source/coin/coin_remote_data_source.dart' as _i674;
-import '../data_source/coin/coin_remote_data_source_impl.dart' as _i780;
+import '../data_source/article/article_api_service.dart' as _i827;
+import '../data_source/article/article_api_service_impl.dart' as _i127;
+import '../data_source/article/article_remote_data_source.dart' as _i1036;
+import '../data_source/article/article_remote_data_source_impl.dart' as _i115;
 import '../utils/network_connectivity.dart' as _i559;
 import 'network_module.dart' as _i567;
 
@@ -29,15 +29,15 @@ _i174.GetIt $initNetworkDI(
   final gh = _i526.GetItHelper(getIt, environment, environmentFilter);
   final networkModule = _$NetworkModule();
   gh.lazySingleton<_i361.Dio>(() => networkModule.dio);
+  gh.lazySingleton<_i827.ArticleApiService>(
+    () => _i127.ArticleApiServiceImpl(gh<_i361.Dio>()),
+  );
   gh.lazySingleton<_i559.NetworkConnectivity>(
     () => _i559.NetworkConnectivityImpl(),
   );
-  gh.lazySingleton<_i733.CoinApiService>(
-    () => _i1035.CoinApiServiceImpl(gh<_i361.Dio>()),
-  );
-  gh.lazySingleton<_i674.CoinRemoteDataSource>(
-    () => _i780.CoinRemoteDataSourceImpl(
-      gh<_i733.CoinApiService>(),
+  gh.lazySingleton<_i1036.ArticleRemoteDataSource>(
+    () => _i115.ArticleRemoteDataSourceImpl(
+      gh<_i827.ArticleApiService>(),
       gh<_i559.NetworkConnectivity>(),
     ),
   );

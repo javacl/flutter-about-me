@@ -1,8 +1,8 @@
 import 'package:coin_data/src/model/coin_data_model.dart';
-import 'package:common/result/bitzy_result.dart';
+import 'package:common/result/project_result.dart';
 
 abstract class CoinRepository {
-  Future<BitZyResult<List<CoinDataModel>>> getCoinsRemote();
+  Future<ProjectResult<List<CoinDataModel>>> getCoinsRemote();
 
   Stream<List<CoinDataModel>> getCoinsLocal();
 }
