@@ -1,0 +1,14 @@
+# melos_managed_dependency_overrides: article_data,common,database,network,preferences,setting_data
+dependency_overrides:
+  article_data:
+    path: ../article_data
+  common:
+    path: ../../core/common
+  database:
+    path: ../../core/database
+  network:
+    path: ../../core/network
+  preferences:
+    path: ../../core/preferences
+  setting_data:
+    path: ../setting_data

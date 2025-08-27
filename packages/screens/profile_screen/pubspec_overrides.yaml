@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: design_system,profile_domain
+dependency_overrides:
+  design_system:
+    path: ../../core/design_system
+  profile_domain:
+    path: ../../domain/profile_domain
