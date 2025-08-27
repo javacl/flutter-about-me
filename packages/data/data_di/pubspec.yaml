@@ -11,6 +11,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  setting_data:
+    path: ../../data/setting_data
+  article_data:
+    path: ../../data/article_data
 
 dev_dependencies:
   flutter_test:
