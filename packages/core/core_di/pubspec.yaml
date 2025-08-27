@@ -15,6 +15,8 @@ dependencies:
     path: ../../core/network
   database:
     path: ../../core/database
+  preferences:
+    path: ../../core/preferences
 
 dev_dependencies:
   flutter_test:

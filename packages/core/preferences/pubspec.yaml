@@ -11,8 +11,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  get_it: any
+  injectable: any
+  shared_preferences: any
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: any
+  build_runner: any
+  injectable_generator: any
