@@ -2,14 +2,14 @@ import 'package:design_system/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/symbols.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class ArticlesScreen extends StatefulWidget {
+  const ArticlesScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<ArticlesScreen> createState() => _ArticlesScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _ArticlesScreenState extends State<ArticlesScreen> {
   @override
   Widget build(BuildContext context) {
     return ThemedScaffold(
@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Container(
                   margin: const EdgeInsets.all(16),
                   child: Text(
-                    "Hello World!",
+                    "Articles",
                     style: Theme.of(context).textTheme.bodyLarge,
                     selectionColor: Theme.of(context).colorScheme.onSurface,
                     textAlign: TextAlign.center,

@@ -1,0 +1,20 @@
+name: articles_domain
+description: "A new Flutter package project."
+version: 0.0.1
+
+publish_to: 'none'
+
+environment:
+  sdk: ^3.8.0
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  article_data:
+    path: ../../data/article_data
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: any

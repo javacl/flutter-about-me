@@ -1,8 +1,8 @@
 import 'package:app/di/injection.dart';
+import 'package:articles_screen/articles_screen.dart';
 import 'package:design_system/theme/theme.dart';
 import 'package:design_system/theme/typography.dart';
 import 'package:flutter/material.dart';
-import 'package:home_screen/home_screen.dart';
 
 void main() {
   configureDependencies();
@@ -29,7 +29,7 @@ class Application extends StatelessWidget {
         appBarTheme: darkAppBarTheme,
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: const ArticlesScreen(),
     );
   }
 }

@@ -1,4 +1,4 @@
-name: home_screen
+name: article_screen
 description: "A new Flutter package project."
 version: 0.0.1
 
@@ -13,17 +13,14 @@ dependencies:
     sdk: flutter
   design_system:
     path: ../../core/design_system
-  home_domain:
-    path: ../../domain/home_domain
+  article_domain:
+    path: ../../domain/article_domain
   material_symbols_icons: any
-  get_it: any
-  injectable: any
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: any
-  injectable_generator: any
 
 flutter:
   uses-material-design: true

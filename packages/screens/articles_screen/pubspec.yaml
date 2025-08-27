@@ -1,0 +1,26 @@
+name: articles_screen
+description: "A new Flutter package project."
+version: 0.0.1
+
+publish_to: 'none'
+
+environment:
+  sdk: ^3.8.0
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  design_system:
+    path: ../../core/design_system
+  articles_domain:
+    path: ../../domain/articles_domain
+  material_symbols_icons: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: any
+
+flutter:
+  uses-material-design: true

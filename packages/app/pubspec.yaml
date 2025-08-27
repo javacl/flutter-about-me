@@ -19,8 +19,12 @@ dependencies:
     path: ../domain/domain_di
   design_system:
     path: ../core/design_system
-  home_screen:
-    path: ../screens/home_screen
+  articles_screen:
+    path: ../screens/articles_screen
+  article_screen:
+    path: ../screens/article_screen
+  profile_screen:
+    path: ../screens/profile_screen
   material_symbols_icons: any
   get_it: any
   injectable: any
