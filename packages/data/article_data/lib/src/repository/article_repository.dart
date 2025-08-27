@@ -6,5 +6,5 @@ abstract class ArticleRepository {
 
   Stream<ArticleDataModel?> getArticleLocal(int id);
 
-  Stream<ProjectResult<List<ArticleDataModel>>> getArticlesRemote(int page);
+  Stream<ProjectResult<void>> getArticlesRemote(int page);
 }

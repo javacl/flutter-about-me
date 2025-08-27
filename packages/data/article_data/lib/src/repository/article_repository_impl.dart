@@ -1,4 +1,5 @@
 import 'package:article_data/src/mapper/article_entity_mapper.dart';
+import 'package:article_data/src/mapper/article_response_mapper.dart';
 import 'package:article_data/src/model/article_data_model.dart';
 import 'package:article_data/src/repository/article_repository.dart';
 import 'package:common/result/project_result.dart';
@@ -32,24 +33,21 @@ class ArticleRepositoryImpl implements ArticleRepository {
   }
 
   @override
-  Stream<ProjectResult<List<ArticleDataModel>>> getArticlesRemote(
-    int page,
-  ) async* {
-    final result = _articleRemoteDataSource.getArticles(page);
+  Stream<ProjectResult<void>> getArticlesRemote(int page) async* {
+    await for (final result in _articleRemoteDataSource.getArticles(page)) {
+      if (result is Error) {
+        yield result as ProjectResult<void>;
+      } else if (result is Success<ArticlesResponse>) {
+        final articles = result.data.articles ?? [];
+        final entities = articles.map((e) => e.toArticleEntity()).toList();
 
-    switch (result) {
-      case Error():
-        yield result as ProjectResult<List<ArticleDataModel>>;
-
-      case Success(:final data):
-        final entities = data.map((e) => e.toArticleEntity()).toList();
         await _articleLocalDataSource.insertOrReplaceArticles(
           clear: page == 1,
           articles: entities,
         );
 
-        final models = data.map((e) => e.toArticleDataModel()).toList();
-        yield Success(models);
+        yield const Success(null);
+      }
     }
   }
 }

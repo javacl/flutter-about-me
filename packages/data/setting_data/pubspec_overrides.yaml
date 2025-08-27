@@ -1,4 +1,6 @@
-# melos_managed_dependency_overrides: preferences
+# melos_managed_dependency_overrides: preferences,common
 dependency_overrides:
   preferences:
     path: ../../core/preferences
+  common:
+    path: ../../core/common
