@@ -11,6 +11,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  common:
+    path: ../../core/common
+  setting_data:
+    path: ../../data/setting_data
   get_it: any
   injectable: any
 
