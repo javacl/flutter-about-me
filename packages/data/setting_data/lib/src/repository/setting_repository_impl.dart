@@ -19,14 +19,14 @@ class SettingRepositoryImpl implements SettingRepository {
   }
 
   @override
-  Stream<ProjectResult<void>> saveThemePreferences(
+  Future<ProjectResult<void>> saveThemePreferences(
     ProjectThemeType theme,
-  ) async* {
+  ) async {
     try {
       await _settingDataSource.saveTheme(theme.value);
-      yield const Success(null);
+      return const Success(null);
     } catch (e) {
-      yield Error(IOException(cause: e));
+      return Error(IOException(cause: e));
     }
   }
 }

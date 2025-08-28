@@ -4,5 +4,5 @@ import 'package:common/result/project_result.dart';
 abstract class SettingRepository {
   Stream<ProjectThemeType> getThemePreferences();
 
-  Stream<ProjectResult<void>> saveThemePreferences(ProjectThemeType theme);
+  Future<ProjectResult<void>> saveThemePreferences(ProjectThemeType theme);
 }

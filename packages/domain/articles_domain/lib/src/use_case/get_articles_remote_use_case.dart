@@ -7,7 +7,7 @@ class GetArticlesRemoteUseCase {
 
   GetArticlesRemoteUseCase(this._articleRepository);
 
-  Stream<void> call(int page) {
+  Future<void> call(int page) {
     return _articleRepository.getArticlesRemote(page);
   }
 }

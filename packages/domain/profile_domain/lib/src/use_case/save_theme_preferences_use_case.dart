@@ -9,7 +9,7 @@ class SaveThemePreferencesUseCase {
 
   SaveThemePreferencesUseCase(this._settingRepository);
 
-  Stream<ProjectResult<void>> call(ProjectThemeType theme) {
+  Future<ProjectResult<void>> call(ProjectThemeType theme) {
     return _settingRepository.saveThemePreferences(theme);
   }
 }

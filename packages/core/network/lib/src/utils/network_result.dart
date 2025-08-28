@@ -6,34 +6,33 @@ import 'package:dio/dio.dart';
 import 'package:network/src/model/error/error_response.dart';
 import 'package:network/src/utils/network_connectivity.dart';
 
-Stream<ProjectResult<T>> checkNetworkResult<T>({
-  required Stream<Response<T>> Function() call,
+Future<ProjectResult<T>> checkNetworkResult<T>({
+  required Future<Response<T>> Function() call,
   required NetworkConnectivity networkConnectivity,
   required String errorMessage,
-}) async* {
+}) async {
   final isConnected = await networkConnectivity.isConnected();
 
-  if (!isConnected) {
-    yield const Error(NetworkConnectionException());
-    return;
-  }
+  if (isConnected) {
+    try {
+      final response = await call();
 
-  try {
-    await for (final response in call()) {
       if (response.statusCode == 200) {
-        yield Success(response.data as T);
+        return Success(response.data as T);
       } else {
         final error = _parseError(response.data);
-        yield Error(
+        return Error(
           DataException(
             message: error.message,
             responseCode: response.statusCode ?? 500,
           ),
         );
       }
+    } catch (e) {
+      return Error(IOException(message: errorMessage, cause: e));
     }
-  } catch (e) {
-    yield Error(IOException(message: errorMessage, cause: e));
+  } else {
+    return const Error(NetworkConnectionException());
   }
 }
 

@@ -12,7 +12,7 @@ class ArticleApiServiceImpl implements ArticleApiService {
   }
 
   @override
-  Stream<Response<ArticlesResponse>> getArticles(int page) async* {
+  Future<Response<ArticlesResponse>> getArticles(int page) async {
     final response = await _dio.get(
       "everything",
       queryParameters: {
@@ -21,7 +21,8 @@ class ArticleApiServiceImpl implements ArticleApiService {
         "page": page,
       },
     );
-    yield Response(
+
+    return Response(
       data: ArticlesResponse.fromJson(response.data),
       requestOptions: response.requestOptions,
     );

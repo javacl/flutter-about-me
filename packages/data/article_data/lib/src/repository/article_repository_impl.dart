@@ -33,12 +33,12 @@ class ArticleRepositoryImpl implements ArticleRepository {
   }
 
   @override
-  Stream<ProjectResult<void>> getArticlesRemote(int page) async* {
-    await for (final result in _articleRemoteDataSource.getArticles(page)) {
-      if (result is Error) {
-        yield result as ProjectResult<void>;
-      } else if (result is Success<ArticlesResponse>) {
-        final articles = result.data.articles ?? [];
+  Future<ProjectResult<void>> getArticlesRemote(int page) async {
+    final result = await _articleRemoteDataSource.getArticles(page);
+
+    return switch (result) {
+      Success<ArticlesResponse>(:final data) => () async {
+        final articles = data.articles ?? [];
         final entities = articles.map((e) => e.toArticleEntity()).toList();
 
         await _articleLocalDataSource.insertOrReplaceArticles(
@@ -46,8 +46,9 @@ class ArticleRepositoryImpl implements ArticleRepository {
           articles: entities,
         );
 
-        yield const Success(null);
-      }
-    }
+        return const Success(null);
+      }(),
+      Error() => result,
+    };
   }
 }

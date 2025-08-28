@@ -14,7 +14,7 @@ class ArticleRemoteDataSourceImpl implements ArticleRemoteDataSource {
   ArticleRemoteDataSourceImpl(this.apiService, this.networkConnectivity);
 
   @override
-  Stream<ProjectResult<ArticlesResponse>> getArticles(int page) {
+  Future<ProjectResult<ArticlesResponse>> getArticles(int page) {
     return checkNetworkResult<ArticlesResponse>(
       call: () => apiService.getArticles(page),
       networkConnectivity: networkConnectivity,
