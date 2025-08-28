@@ -7,13 +7,13 @@ import 'package:setting_data/src/repository/setting_repository.dart';
 
 @Injectable()
 class SettingRepositoryImpl implements SettingRepository {
-  final SettingPreferencesDataSource _settingDataSource;
+  final SettingPreferencesDataSource _settingPreferencesDataSource;
 
-  SettingRepositoryImpl(this._settingDataSource);
+  SettingRepositoryImpl(this._settingPreferencesDataSource);
 
   @override
   Stream<ProjectThemeType> getThemePreferences() {
-    return _settingDataSource.getTheme().map((value) {
+    return _settingPreferencesDataSource.getTheme().map((value) {
       return ProjectThemeType.fromValue(value);
     });
   }
@@ -23,7 +23,7 @@ class SettingRepositoryImpl implements SettingRepository {
     ProjectThemeType theme,
   ) async {
     try {
-      await _settingDataSource.saveTheme(theme.value);
+      await _settingPreferencesDataSource.saveTheme(theme.value);
       return const Success(null);
     } catch (e) {
       return Error(IOException(cause: e));
