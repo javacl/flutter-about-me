@@ -14,26 +14,31 @@ class ArticlesScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.surface,
         body: SafeArea(
           child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                  margin: const EdgeInsets.all(16),
-                  child: Text(
-                    "Articles",
-                    style: Theme.of(context).textTheme.bodyLarge,
-                    selectionColor: Theme.of(context).colorScheme.onSurface,
-                    textAlign: TextAlign.center,
+            child: InkWell(
+              onTap: () {
+                onArticleClick?.call(2);
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    margin: const EdgeInsets.all(16),
+                    child: Text(
+                      "Articles",
+                      style: Theme.of(context).textTheme.bodyLarge,
+                      selectionColor: Theme.of(context).colorScheme.onSurface,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                ),
-                Icon(
-                  Symbols.account_balance_wallet_rounded,
-                  weight: 300,
-                  fill: 1,
-                  color: Theme.of(context).colorScheme.primary,
-                  size: 64,
-                ),
-              ],
+                  Icon(
+                    Symbols.account_balance_wallet_rounded,
+                    weight: 300,
+                    fill: 1,
+                    color: Theme.of(context).colorScheme.primary,
+                    size: 64,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
