@@ -1,4 +1,4 @@
-# melos_managed_dependency_overrides: common,core_di,data_di,database,design_system,domain_di,network,article_data,article_domain,article_screen,articles_domain,articles_screen,profile_domain,profile_screen,preferences,setting_data
+# melos_managed_dependency_overrides: common,core_di,data_di,database,design_system,domain_di,network,article_data,article_domain,article_screen,articles_domain,articles_screen,profile_domain,profile_screen,preferences,setting_data,main_domain
 dependency_overrides:
   article_data:
     path: ../data/article_data
@@ -22,6 +22,8 @@ dependency_overrides:
     path: ../core/design_system
   domain_di:
     path: ../domain/domain_di
+  main_domain:
+    path: ../domain/main_domain
   network:
     path: ../core/network
   preferences:

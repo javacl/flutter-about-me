@@ -1,5 +1,7 @@
 import 'package:app/di/injection.dart';
 import 'package:articles_screen/articles_screen.dart';
+import 'package:article_screen/article_screen.dart';
+import 'package:profile_screen/profile_screen.dart';
 import 'package:design_system/theme/theme.dart';
 import 'package:design_system/theme/typography.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +14,6 @@ void main() {
 class Application extends StatelessWidget {
   const Application({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -29,7 +30,23 @@ class Application extends StatelessWidget {
         appBarTheme: darkAppBarTheme,
         useMaterial3: true,
       ),
-      home: const ArticlesScreen(),
+      initialRoute: articlesRoute,
+      onGenerateRoute: (settings) {
+        switch (settings.name) {
+          case articlesRoute:
+            return articlesScreen(
+              onArticleClick: (id) {
+                context.navigateToArticle(id);
+              },
+            );
+          case articleRoute:
+            return articleScreen(settings);
+          case profileRoute:
+            return profileScreen();
+          default:
+            return null;
+        }
+      },
     );
   }
 }
