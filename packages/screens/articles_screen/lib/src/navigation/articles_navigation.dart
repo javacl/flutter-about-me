@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 
 const articlesRoute = "articles_route";
 
-extension ArticlesNavigation on BuildContext {
-  void navigateToArticles() {
-    Navigator.of(this).pushNamed(articlesRoute);
-  }
+void navigateToArticles(BuildContext context) {
+  Navigator.pushNamed(context, articlesRoute);
 }
 
-Route<dynamic> articlesScreen({void Function(int)? onArticleClick}) {
+Route<dynamic> articlesScreen({
+  void Function(BuildContext, int)? onArticleClick,
+}) {
   return MaterialPageRoute(
     builder: (context) => ArticlesScreen(onArticleClick: onArticleClick),
   );

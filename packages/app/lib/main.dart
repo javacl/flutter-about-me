@@ -1,10 +1,10 @@
 import 'package:app/di/injection.dart';
-import 'package:articles_screen/articles_screen.dart';
 import 'package:article_screen/article_screen.dart';
-import 'package:profile_screen/profile_screen.dart';
+import 'package:articles_screen/articles_screen.dart';
 import 'package:design_system/theme/theme.dart';
 import 'package:design_system/theme/typography.dart';
 import 'package:flutter/material.dart';
+import 'package:profile_screen/profile_screen.dart';
 
 void main() {
   configureDependencies();
@@ -35,8 +35,8 @@ class Application extends StatelessWidget {
         switch (settings.name) {
           case articlesRoute:
             return articlesScreen(
-              onArticleClick: (id) {
-                context.navigateToArticle(id);
+              onArticleClick: (context, id) {
+                navigateToArticle(context, id);
               },
             );
           case articleRoute:

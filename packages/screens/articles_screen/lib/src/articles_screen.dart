@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/symbols.dart';
 
 class ArticlesScreen extends StatelessWidget {
-  final void Function(int)? onArticleClick;
+  final void Function(BuildContext, int)? onArticleClick;
 
   const ArticlesScreen({super.key, this.onArticleClick});
 
@@ -16,7 +16,7 @@ class ArticlesScreen extends StatelessWidget {
           child: Center(
             child: InkWell(
               onTap: () {
-                onArticleClick?.call(2);
+                onArticleClick?.call(context, 2);
               },
               child: Column(
                 mainAxisSize: MainAxisSize.min,

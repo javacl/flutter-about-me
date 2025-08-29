@@ -3,10 +3,8 @@ import 'package:profile_screen/src/profile_screen.dart';
 
 const profileRoute = "profile_route";
 
-extension ProfileNavigation on BuildContext {
-  void navigateToProfile() {
-    Navigator.of(this).pushNamed(profileRoute);
-  }
+void navigateToProfile(BuildContext context) {
+  Navigator.pushNamed(context, profileRoute);
 }
 
 Route<dynamic> profileScreen() {

@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 
 const articleRoute = "article_route";
 
-extension ArticleNavigation on BuildContext {
-  void navigateToArticle(int id) {
-    Navigator.of(this).pushNamed(articleRoute, arguments: ArticleArgs(id));
-  }
+void navigateToArticle(BuildContext context, int id) {
+  Navigator.pushNamed(context, articleRoute, arguments: ArticleArgs(id));
 }
 
 Route<dynamic> articleScreen(RouteSettings settings) {
