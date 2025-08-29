@@ -1,0 +1,8 @@
+# melos_managed_dependency_overrides: common,preferences,setting_data
+dependency_overrides:
+  common:
+    path: ../../core/common
+  preferences:
+    path: ../../core/preferences
+  setting_data:
+    path: ../../data/setting_data

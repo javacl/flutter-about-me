@@ -1,0 +1,22 @@
+# melos_managed_dependency_overrides: article_data,article_domain,articles_domain,common,database,main_domain,network,preferences,profile_domain,setting_data
+dependency_overrides:
+  article_data:
+    path: ../../data/article_data
+  article_domain:
+    path: ../article_domain
+  articles_domain:
+    path: ../articles_domain
+  common:
+    path: ../../core/common
+  database:
+    path: ../../core/database
+  main_domain:
+    path: ../main_domain
+  network:
+    path: ../../core/network
+  preferences:
+    path: ../../core/preferences
+  profile_domain:
+    path: ../profile_domain
+  setting_data:
+    path: ../../data/setting_data
