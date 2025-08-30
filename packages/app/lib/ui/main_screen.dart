@@ -26,38 +26,29 @@ class MainScreen extends StatelessWidget {
     ),
   ];
 
-  final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MainBloc, MainState>(
       builder: (context, state) {
         return Scaffold(
-          body: PopScope(
-            canPop: state.currentIndex != 0,
-            child: Navigator(
-              key: navigatorKey,
-              initialRoute: destinations[state.currentIndex].route,
-              onGenerateRoute: onGenerateRoute,
-            ),
+          body: const Navigator(
+            initialRoute: articlesRoute,
+            onGenerateRoute: onGenerateRoute,
           ),
           bottomNavigationBar: state.currentIndex == 0
               ? BottomNavigationBar(
                   currentIndex: state.currentIndex,
                   onTap: (index) {
-                    final selectedDestination = destinations[index];
+                    final destination = destinations[index];
                     context.read<MainBloc>().add(MainEvent.tabChanged(index));
-
-                    if (navigatorKey.currentState != null &&
-                        navigatorKey.currentState!.canPop()) {
-                      navigatorKey.currentState!.popUntil(
-                        (route) => route.isFirst,
-                      );
+                    switch (destination.route) {
+                      case articlesRoute:
+                        navigateToArticles(context);
+                        break;
+                      case profileRoute:
+                        navigateToProfile(context);
+                        break;
                     }
-
-                    navigatorKey.currentState!.pushReplacementNamed(
-                      selectedDestination.route,
-                    );
                   },
                   items: destinations
                       .map(
