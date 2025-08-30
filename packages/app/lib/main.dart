@@ -30,7 +30,7 @@ class Application extends StatelessWidget {
         appBarTheme: darkAppBarTheme,
         useMaterial3: true,
       ),
-      home: BlocProvider(create: (_) => MainBloc(), child: const MainScreen()),
+      home: BlocProvider(create: (_) => MainBloc(), child: MainScreen()),
     );
   }
 }

@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$MainState {
 
- int get currentIndex; List<String> get routes;
+ int get currentIndex;
 /// Create a copy of MainState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $MainStateCopyWith<MainState> get copyWith => _$MainStateCopyWithImpl<MainState>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MainState&&(identical(other.currentIndex, currentIndex) || other.currentIndex == currentIndex)&&const DeepCollectionEquality().equals(other.routes, routes));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is MainState&&(identical(other.currentIndex, currentIndex) || other.currentIndex == currentIndex));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,currentIndex,const DeepCollectionEquality().hash(routes));
+int get hashCode => Object.hash(runtimeType,currentIndex);
 
 @override
 String toString() {
-  return 'MainState(currentIndex: $currentIndex, routes: $routes)';
+  return 'MainState(currentIndex: $currentIndex)';
 }
 
 
@@ -45,7 +45,7 @@ abstract mixin class $MainStateCopyWith<$Res>  {
   factory $MainStateCopyWith(MainState value, $Res Function(MainState) _then) = _$MainStateCopyWithImpl;
 @useResult
 $Res call({
- int currentIndex, List<String> routes
+ int currentIndex
 });
 
 
@@ -62,11 +62,10 @@ class _$MainStateCopyWithImpl<$Res>
 
 /// Create a copy of MainState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? currentIndex = null,Object? routes = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? currentIndex = null,}) {
   return _then(_self.copyWith(
 currentIndex: null == currentIndex ? _self.currentIndex : currentIndex // ignore: cast_nullable_to_non_nullable
-as int,routes: null == routes ? _self.routes : routes // ignore: cast_nullable_to_non_nullable
-as List<String>,
+as int,
   ));
 }
 
@@ -151,10 +150,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int currentIndex,  List<String> routes)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int currentIndex)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _MainState() when $default != null:
-return $default(_that.currentIndex,_that.routes);case _:
+return $default(_that.currentIndex);case _:
   return orElse();
 
 }
@@ -172,10 +171,10 @@ return $default(_that.currentIndex,_that.routes);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int currentIndex,  List<String> routes)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int currentIndex)  $default,) {final _that = this;
 switch (_that) {
 case _MainState():
-return $default(_that.currentIndex,_that.routes);case _:
+return $default(_that.currentIndex);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -192,10 +191,10 @@ return $default(_that.currentIndex,_that.routes);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int currentIndex,  List<String> routes)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int currentIndex)?  $default,) {final _that = this;
 switch (_that) {
 case _MainState() when $default != null:
-return $default(_that.currentIndex,_that.routes);case _:
+return $default(_that.currentIndex);case _:
   return null;
 
 }
@@ -207,17 +206,10 @@ return $default(_that.currentIndex,_that.routes);case _:
 
 
 class _MainState implements MainState {
-  const _MainState({required this.currentIndex, required final  List<String> routes}): _routes = routes;
+  const _MainState({required this.currentIndex});
   
 
 @override final  int currentIndex;
- final  List<String> _routes;
-@override List<String> get routes {
-  if (_routes is EqualUnmodifiableListView) return _routes;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_routes);
-}
-
 
 /// Create a copy of MainState
 /// with the given fields replaced by the non-null parameter values.
@@ -229,16 +221,16 @@ _$MainStateCopyWith<_MainState> get copyWith => __$MainStateCopyWithImpl<_MainSt
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MainState&&(identical(other.currentIndex, currentIndex) || other.currentIndex == currentIndex)&&const DeepCollectionEquality().equals(other._routes, _routes));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MainState&&(identical(other.currentIndex, currentIndex) || other.currentIndex == currentIndex));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,currentIndex,const DeepCollectionEquality().hash(_routes));
+int get hashCode => Object.hash(runtimeType,currentIndex);
 
 @override
 String toString() {
-  return 'MainState(currentIndex: $currentIndex, routes: $routes)';
+  return 'MainState(currentIndex: $currentIndex)';
 }
 
 
@@ -249,7 +241,7 @@ abstract mixin class _$MainStateCopyWith<$Res> implements $MainStateCopyWith<$Re
   factory _$MainStateCopyWith(_MainState value, $Res Function(_MainState) _then) = __$MainStateCopyWithImpl;
 @override @useResult
 $Res call({
- int currentIndex, List<String> routes
+ int currentIndex
 });
 
 
@@ -266,11 +258,10 @@ class __$MainStateCopyWithImpl<$Res>
 
 /// Create a copy of MainState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? currentIndex = null,Object? routes = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? currentIndex = null,}) {
   return _then(_MainState(
 currentIndex: null == currentIndex ? _self.currentIndex : currentIndex // ignore: cast_nullable_to_non_nullable
-as int,routes: null == routes ? _self._routes : routes // ignore: cast_nullable_to_non_nullable
-as List<String>,
+as int,
   ));
 }
 
