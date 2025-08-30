@@ -23,11 +23,11 @@ _i174.GetIt $initArticlesDomainDI(
   _i526.EnvironmentFilter? environmentFilter,
 }) {
   final gh = _i526.GetItHelper(getIt, environment, environmentFilter);
-  gh.factory<_i978.GetArticlesRemoteUseCase>(
-    () => _i978.GetArticlesRemoteUseCase(gh<_i464.ArticleRepository>()),
-  );
   gh.factory<_i127.GetArticlesLocalUseCase>(
     () => _i127.GetArticlesLocalUseCase(gh<_i464.ArticleRepository>()),
+  );
+  gh.factory<_i978.GetArticlesRemoteUseCase>(
+    () => _i978.GetArticlesRemoteUseCase(gh<_i464.ArticleRepository>()),
   );
   return getIt;
 }
