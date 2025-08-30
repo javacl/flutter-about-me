@@ -1,0 +1,30 @@
+import 'package:app/navigation/main_navigation.dart';
+import 'package:articles_screen/articles_screen.dart';
+import 'package:design_system/theme/theme.dart';
+import 'package:design_system/theme/typography.dart';
+import 'package:flutter/material.dart';
+
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      themeMode: ThemeMode.system,
+      theme: ThemeData(
+        colorScheme: lightColorScheme,
+        textTheme: textTheme,
+        appBarTheme: lightAppBarTheme,
+        useMaterial3: true,
+      ),
+      darkTheme: ThemeData(
+        colorScheme: darkColorScheme,
+        textTheme: textTheme,
+        appBarTheme: darkAppBarTheme,
+        useMaterial3: true,
+      ),
+      initialRoute: articlesRoute,
+      onGenerateRoute: onGenerateRoute,
+    );
+  }
+}

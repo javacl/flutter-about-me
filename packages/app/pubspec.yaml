@@ -28,6 +28,8 @@ dependencies:
   material_symbols_icons: any
   get_it: any
   injectable: any
+  flutter_bloc: any
+  freezed_annotation: any
 
 dev_dependencies:
   flutter_test:
@@ -36,6 +38,7 @@ dev_dependencies:
   melos: any
   build_runner: any
   injectable_generator: any
+  freezed: any
 
 flutter:
   uses-material-design: true
