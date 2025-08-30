@@ -33,35 +33,43 @@ class MainScreen extends StatelessWidget {
     return BlocBuilder<MainBloc, MainState>(
       builder: (context, state) {
         return Scaffold(
-          body: Navigator(
-            key: navigatorKey,
-            initialRoute: destinations[state.currentIndex].route,
-            onGenerateRoute: onGenerateRoute,
+          body: PopScope(
+            canPop: state.currentIndex != 0,
+            child: Navigator(
+              key: navigatorKey,
+              initialRoute: destinations[state.currentIndex].route,
+              onGenerateRoute: onGenerateRoute,
+            ),
           ),
-          bottomNavigationBar: BottomNavigationBar(
-            currentIndex: state.currentIndex,
-            onTap: (index) {
-              final selectedDestination = destinations[index];
-              context.read<MainBloc>().add(MainEvent.tabChanged(index));
+          bottomNavigationBar: state.currentIndex == 0
+              ? BottomNavigationBar(
+                  currentIndex: state.currentIndex,
+                  onTap: (index) {
+                    final selectedDestination = destinations[index];
+                    context.read<MainBloc>().add(MainEvent.tabChanged(index));
 
-              if (navigatorKey.currentState != null &&
-                  navigatorKey.currentState!.canPop()) {
-                navigatorKey.currentState!.popUntil((route) => route.isFirst);
-              }
-              navigatorKey.currentState!.pushReplacementNamed(
-                selectedDestination.route,
-              );
-            },
-            items: destinations
-                .map(
-                  (item) => BottomNavigationBarItem(
-                    icon: Icon(item.unSelectedIcon),
-                    activeIcon: Icon(item.selectedIcon),
-                    label: item.label,
-                  ),
+                    if (navigatorKey.currentState != null &&
+                        navigatorKey.currentState!.canPop()) {
+                      navigatorKey.currentState!.popUntil(
+                        (route) => route.isFirst,
+                      );
+                    }
+
+                    navigatorKey.currentState!.pushReplacementNamed(
+                      selectedDestination.route,
+                    );
+                  },
+                  items: destinations
+                      .map(
+                        (item) => BottomNavigationBarItem(
+                          icon: Icon(item.unSelectedIcon),
+                          activeIcon: Icon(item.selectedIcon),
+                          label: item.label,
+                        ),
+                      )
+                      .toList(),
                 )
-                .toList(),
-          ),
+              : null,
         );
       },
     );
