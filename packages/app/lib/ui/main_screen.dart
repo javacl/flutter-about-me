@@ -2,6 +2,7 @@ import 'package:app/navigation/main_navigation.dart';
 import 'package:app/ui/main_bloc.dart';
 import 'package:app/ui/main_event.dart';
 import 'package:app/ui/main_state.dart';
+import 'package:articles_screen/articles_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,6 +17,7 @@ class MainScreen extends StatelessWidget {
           body: Navigator(
             key: GlobalKey<NavigatorState>(),
             onGenerateRoute: onGenerateRoute,
+            initialRoute: articlesRoute,
           ),
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: state.currentIndex,

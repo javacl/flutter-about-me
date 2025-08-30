@@ -5,7 +5,7 @@ import 'package:profile_screen/profile_screen.dart';
 part 'main_state.freezed.dart';
 
 @freezed
-class MainState with _$MainState {
+abstract class MainState with _$MainState {
   const factory MainState({
     required int currentIndex,
     required List<String> routes,
