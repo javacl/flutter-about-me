@@ -1,6 +1,6 @@
 import 'package:common/model/project_theme_type.dart';
 import 'package:injectable/injectable.dart';
-import 'package:setting_data/setting_data.dart';
+import 'package:setting_data/setting_data_imports.dart';
 
 @Injectable()
 class GetThemePreferencesUseCase {

@@ -1,4 +1,4 @@
-import 'package:article_data/article_data.dart';
+import 'package:article_data/article_data_imports.dart';
 import 'package:injectable/injectable.dart';
 
 @Injectable()

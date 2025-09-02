@@ -1,4 +1,4 @@
-import 'package:article_screen/article_screen.dart';
+import 'package:article_screen/article_screen_imports.dart';
 import 'package:design_system/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/symbols.dart';

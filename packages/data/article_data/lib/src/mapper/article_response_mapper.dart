@@ -1,5 +1,5 @@
-import 'package:database/database.dart';
-import 'package:network/network.dart';
+import 'package:database/database_imports.dart';
+import 'package:network/network_imports.dart';
 
 extension ArticleResponseMapper on ArticleResponse {
   ArticleEntity toArticleEntity() => ArticleEntity(

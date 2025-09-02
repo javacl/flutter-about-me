@@ -1,4 +1,4 @@
-import 'package:database/database.dart';
+import 'package:database/database_imports.dart';
 import 'package:database/src/data_source/article/article_dao.dart';
 import 'package:database/src/data_source/article/article_local_data_source.dart';
 import 'package:database/src/db/app_database.dart';

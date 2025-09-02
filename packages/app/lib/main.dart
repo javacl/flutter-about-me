@@ -3,12 +3,12 @@ import 'package:app/model/bottom_navigation_model.dart';
 import 'package:app/navigation/main_navigation.dart';
 import 'package:app/ui/main_bloc.dart';
 import 'package:app/ui/main_state.dart';
-import 'package:articles_screen/articles_screen.dart';
+import 'package:articles_screen/articles_screen_imports.dart';
 import 'package:design_system/theme/theme.dart';
 import 'package:design_system/theme/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:profile_screen/profile_screen.dart';
+import 'package:profile_screen/profile_screen_imports.dart';
 
 void main() {
   configureDependencies();

@@ -3,9 +3,9 @@ import 'package:article_data/src/mapper/article_response_mapper.dart';
 import 'package:article_data/src/model/article_data_model.dart';
 import 'package:article_data/src/repository/article_repository.dart';
 import 'package:common/result/project_result.dart';
-import 'package:database/database.dart';
+import 'package:database/database_imports.dart';
 import 'package:injectable/injectable.dart';
-import 'package:network/network.dart';
+import 'package:network/network_imports.dart';
 
 @LazySingleton(as: ArticleRepository)
 class ArticleRepositoryImpl implements ArticleRepository {

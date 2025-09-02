@@ -1,5 +1,5 @@
 import 'package:article_data/src/model/article_data_model.dart';
-import 'package:database/database.dart';
+import 'package:database/database_imports.dart';
 
 extension ArticleEntityMapper on ArticleEntity {
   ArticleDataModel toArticleDataModel() => ArticleDataModel(

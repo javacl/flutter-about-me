@@ -1,4 +1,4 @@
-import 'package:article_data/article_data.dart';
+import 'package:article_data/article_data_imports.dart';
 import 'package:articles_domain/src/mapper/article_data_model_mapper.dart';
 import 'package:articles_domain/src/model/article_domain_model.dart';
 import 'package:injectable/injectable.dart';

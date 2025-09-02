@@ -12,7 +12,7 @@
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
-import '../../database.dart' as _i414;
+import '../../database_imports.dart' as _i414;
 import '../data_source/article/article_dao.dart' as _i524;
 import '../data_source/article/article_local_data_source_impl.dart' as _i773;
 import '../db/app_database.dart' as _i951;

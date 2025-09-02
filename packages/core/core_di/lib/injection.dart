@@ -1,6 +1,6 @@
-import 'package:database/database.dart';
-import 'package:network/network.dart';
-import 'package:preferences/preferences.dart';
+import 'package:database/database_imports.dart';
+import 'package:network/network_imports.dart';
+import 'package:preferences/preferences_imports.dart';
 
 void configureCoreDependencies() {
   configureNetworkDependencies();

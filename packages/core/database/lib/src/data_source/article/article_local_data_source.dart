@@ -1,4 +1,4 @@
-import 'package:database/database.dart';
+import 'package:database/database_imports.dart';
 
 abstract class ArticleLocalDataSource {
   Stream<List<ArticleEntity>> getArticles();

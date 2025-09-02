@@ -2,7 +2,7 @@ import 'package:common/model/project_theme_type.dart';
 import 'package:common/result/project_exception.dart';
 import 'package:common/result/project_result.dart';
 import 'package:injectable/injectable.dart';
-import 'package:preferences/preferences.dart';
+import 'package:preferences/preferences_imports.dart';
 import 'package:setting_data/src/repository/setting_repository.dart';
 
 @Injectable()

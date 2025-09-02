@@ -1,6 +1,6 @@
-import 'package:articles_screen/articles_screen.dart';
-import 'package:article_screen/article_screen.dart';
-import 'package:profile_screen/profile_screen.dart';
+import 'package:articles_screen/articles_screen_imports.dart';
+import 'package:article_screen/article_screen_imports.dart';
+import 'package:profile_screen/profile_screen_imports.dart';
 import 'package:flutter/cupertino.dart';
 
 Route<dynamic>? onGenerateRoute(RouteSettings settings) {
