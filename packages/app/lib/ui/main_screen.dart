@@ -35,32 +35,30 @@ class MainScreen extends StatelessWidget {
             initialRoute: articlesRoute,
             onGenerateRoute: onGenerateRoute,
           ),
-          bottomNavigationBar: state.currentIndex == 0
-              ? BottomNavigationBar(
-                  currentIndex: state.currentIndex,
-                  onTap: (index) {
-                    final destination = destinations[index];
-                    context.read<MainBloc>().add(MainEvent.tabChanged(index));
-                    switch (destination.route) {
-                      case articlesRoute:
-                        navigateToArticles(context);
-                        break;
-                      case profileRoute:
-                        navigateToProfile(context);
-                        break;
-                    }
-                  },
-                  items: destinations
-                      .map(
-                        (item) => BottomNavigationBarItem(
-                          icon: Icon(item.unSelectedIcon),
-                          activeIcon: Icon(item.selectedIcon),
-                          label: item.label,
-                        ),
-                      )
-                      .toList(),
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: state.currentIndex,
+            onTap: (index) {
+              final destination = destinations[index];
+              context.read<MainBloc>().add(MainEvent.tabChanged(index));
+              switch (destination.route) {
+                case articlesRoute:
+                  navigateToArticles(context);
+                  break;
+                case profileRoute:
+                  navigateToProfile(context);
+                  break;
+              }
+            },
+            items: destinations
+                .map(
+                  (item) => BottomNavigationBarItem(
+                    icon: Icon(item.unSelectedIcon),
+                    activeIcon: Icon(item.selectedIcon),
+                    label: item.label,
+                  ),
                 )
-              : null,
+                .toList(),
+          ),
         );
       },
     );
