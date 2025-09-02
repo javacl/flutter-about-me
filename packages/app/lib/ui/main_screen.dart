@@ -1,5 +1,5 @@
 import 'package:app/model/bottom_navigation_model.dart';
-import 'package:app/navigation/main_navigation.dart';
+import 'package:app/navigation/navigation.dart';
 import 'package:app/ui/main_bloc.dart';
 import 'package:app/ui/main_event.dart';
 import 'package:app/ui/main_state.dart';

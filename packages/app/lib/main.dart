@@ -1,6 +1,6 @@
 import 'package:app/di/injection.dart';
 import 'package:app/model/bottom_navigation_model.dart';
-import 'package:app/navigation/main_navigation.dart';
+import 'package:app/navigation/navigation.dart';
 import 'package:app/ui/main_bloc.dart';
 import 'package:app/ui/main_state.dart';
 import 'package:articles_screen/articles_screen_imports.dart';
