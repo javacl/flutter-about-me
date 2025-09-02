@@ -19,8 +19,6 @@ dependencies:
     path: ../domain/domain_di
   design_system:
     path: ../core/design_system
-  main_navigation_screen:
-    path: ../screens/main_navigation_screen
   articles_screen:
     path: ../screens/articles_screen
   article_screen:
