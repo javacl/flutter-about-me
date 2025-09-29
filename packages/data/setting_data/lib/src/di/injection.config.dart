@@ -11,7 +11,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
-import 'package:preferences/preferences_imports.dart' as _i695;
+import 'package:preferences/preferences_imports.dart' as _i140;
 
 import '../repository/setting_repository_impl.dart' as _i225;
 
@@ -23,7 +23,7 @@ _i174.GetIt $initSettingDataDI(
 }) {
   final gh = _i526.GetItHelper(getIt, environment, environmentFilter);
   gh.factory<_i225.SettingRepositoryImpl>(
-    () => _i225.SettingRepositoryImpl(gh<_i695.SettingPreferencesDataSource>()),
+    () => _i225.SettingRepositoryImpl(gh<_i140.SettingPreferencesDataSource>()),
   );
   return getIt;
 }
